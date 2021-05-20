@@ -1,48 +1,25 @@
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.stage.Stage;
-
-
 import character.*;
+
+import java.sql.SQLOutput;
 import java.util.*;
 import java.io.*;
 
-public class LinkStart extends Application{
+public class LinkStart{
     static int x;
-
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("HBox Experiment 1");
-
-        Button save = new Button("Save");
-        save.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-            saveGame();
-            }
-        });
-
-        Scene scene = new Scene(save, 200, 100);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-    }
+    Player player1;
+    Player player2;
 
 
 
     public static void main(String[] args){
-        Application.launch(args);
         LinkStart game = new LinkStart();
 
         game.Welcome();
         game.characterSetup();
         game.saveGame();
+        game.readChar();
 
     }
-
 
     public void Welcome(){
             Scanner sc = new Scanner(System.in);
@@ -67,15 +44,13 @@ public class LinkStart extends Application{
             System.out.print("Finally, what's your name: ");
             String nam = input.next();
 
-            Player main = new Player();
-
             switch (rac) {
                 case "1":
                     aHuman a = new aHuman();
                     a.setRace("Human");
                     a.setName(nam);
-                    main = a;
-                    break;
+                    player1 = a;
+
 
                 default:
                     System.out.println("invalid input");
@@ -83,13 +58,21 @@ public class LinkStart extends Application{
             }
 
 
-            System.out.println("Info: " + main.getRace());
+            //System.out.println("Info: " + player1.getRace()); //Tests Data Passing
         }else {
-            System.out.println("welcome back");//insert methods for reloading save data
+            System.out.println("welcome back"); //insert methods for reloading save data
+            player1 = new Player();
+
         }
-        }
+        System.out.println("Hello");
+    }
 
     public void saveGame() {
         System.out.println();
+    }
+
+    public void readChar(){
+        System.out.println("Now we'll read your character: ");
+        System.out.println("Name: "+player1.getName());
     }
 }
