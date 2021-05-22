@@ -11,8 +11,8 @@ public class aHuman extends Player {
         health=120+r.nextInt(50);
         intel=80+r.nextInt(70);
         stamina=130+r.nextInt(50);
-        attack=110+r.nextInt(50);
-        defense=120+r.nextInt(40);
+        attack=2+r.nextInt(3);
+        defense=2+r.nextInt(3);
 
     }
 }

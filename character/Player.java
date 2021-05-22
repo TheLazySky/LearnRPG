@@ -6,11 +6,11 @@ public class Player {
     String race;
     String clazz;
 
-    int health;
+    double health;
     int intel;
     int stamina;
-    int attack;
-    int defense;
+    double attack;
+    double defense;
 
     public Player(){
         this.attack=100;
@@ -44,16 +44,16 @@ public class Player {
         this.defense=defense;
     }
 
-    public int getAttack() {
+    public double getAttack() {
         return attack;
     }
     public String getAttribute() {
         return attribute;
     }
-    public int getDefense() {
+    public double getDefense() {
         return defense;
     }
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
     public int getIntel() {
@@ -68,16 +68,16 @@ public class Player {
     public int getStamina() {
         return stamina;
     }
-    public void setAttack(int attack) {
+    public void setAttack(double attack) {
         this.attack = attack;
     }
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
-    public void setDefense(int defense) {
+    public void setDefense(double defense) {
         this.defense = defense;
     }
-    public void setHealth(int health) {
+    public void setHealth(double health) {
         this.health = health;
     }
     public void setIntel(int intel) {
